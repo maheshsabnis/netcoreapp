@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").on('click', function () {
+
+                $.ajax({
+                    url: 'http://localhost:18172/api/Category',
+                    type:'GET'
+                }).done(function (resp) {
+                    console.log(JSON.stringify(resp));
+                }).fail(function (err) {
+                    console.log(err);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+       <input type="button" id="btn" value="Get Data"/>
+ </body>
+</html>

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netcoreapp", "netcoreapp\netcoreapp.csproj", "{54D3674B-A08B-497E-B510-AB9DC87E2EB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netcoreapp", "netcoreapp\netcoreapp.csproj", "{54D3674B-A08B-497E-B510-AB9DC87E2EB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clientapp", "clientapp\clientapp.csproj", "{CA5BE130-527D-4B78-88BA-0CF68BDF80C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{54D3674B-A08B-497E-B510-AB9DC87E2EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54D3674B-A08B-497E-B510-AB9DC87E2EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54D3674B-A08B-497E-B510-AB9DC87E2EB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA5BE130-527D-4B78-88BA-0CF68BDF80C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5BE130-527D-4B78-88BA-0CF68BDF80C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA5BE130-527D-4B78-88BA-0CF68BDF80C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5BE130-527D-4B78-88BA-0CF68BDF80C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

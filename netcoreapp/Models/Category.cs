@@ -14,7 +14,7 @@ namespace netcoreapp.Models
         [Required(ErrorMessage = "Category Name is Required")]
         public string CategoryName { get; set; }
         [Required(ErrorMessage = "Base Price is Required")]
-        [NUmericNonNegative(ErrorMessage ="Cannot accept -Ve Price")]
+     //   [NUmericNonNegative(ErrorMessage ="Cannot accept -Ve Price")]
         public int BasePrice { get; set; }
         // one to many relationship
         public ICollection<Product> Products { get; set; }

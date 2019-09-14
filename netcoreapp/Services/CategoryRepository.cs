@@ -19,9 +19,16 @@ namespace netcoreapp.Services
 
         public async Task<Category> CreateAsync(Category entity)
         {
-            var result = await context.Categories.AddAsync(entity);
-            await context.SaveChangesAsync();
-            return result.Entity;
+            try
+            {
+                var result = await context.Categories.AddAsync(entity);
+                await context.SaveChangesAsync();
+                return result.Entity;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<bool> DeleteAsync(int id)

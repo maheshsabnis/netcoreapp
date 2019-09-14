@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using netcoreapp.Models;
 using netcoreapp.Services;
 using Newtonsoft.Json.Serialization;
+using netcoreapp.Middlewares;
 
 namespace netcoreapp
 {
@@ -43,6 +44,16 @@ namespace netcoreapp
                 options.UseSqlServer(Configuration.GetConnectionString
                         ("ApplicationConnection")); 
             });
+
+            // define cors extensions
+            services.AddCors(options => {
+                options.AddPolicy("corspolicy", policy =>
+                {
+                    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
+
             // register all repositories in DI
 
             services.AddScoped<IRepository<Category,int>,CategoryRepository>();
@@ -68,6 +79,10 @@ namespace netcoreapp
                 app.UseDeveloperExceptionPage();
             }
 
+            // define CORS Policy
+            app.UseCors("corspolicy");
+            // the custom exception Middlewaare
+            app.UseErrorMiddleware();
             app.UseMvc();
         }
     }

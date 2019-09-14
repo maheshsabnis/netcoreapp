@@ -18,3 +18,32 @@
 	HttpPostAttribute()
 	HttpPutAttribute()
 	HttpDeleteAttribute()
+
+
+#========================================================================================
+
+Creating Custom Middleware
+1. The class must be ctor injected using the 'RequestDelegate' object
+2. The RequestDelegate accepts HttpContext as input Parameter
+3. The Middleware class must have 'InvokeAsync()' as async method. This method will contans
+	logic for Middlware
+4. Create an extension class for Middleware, that have an extension method for 
+	IApplicationBuilder.
+		This method will have the following code
+			IApplicationBuilder.UseMiddleware<T>();
+			The 'T' is the Custom Middleware class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

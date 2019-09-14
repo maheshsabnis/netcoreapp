@@ -41,12 +41,22 @@ namespace netcoreapp.Controllers
         [HttpPost]
         public IActionResult Post(Category category)
         {
-            if (ModelState.IsValid)
-            {
-                category = catRepository.CreateAsync(category).Result;
-                return Ok(category);
-            }
-            return BadRequest(ModelState);
+            //try
+            //{
+                if (ModelState.IsValid)
+                {
+                    if (category.BasePrice < 0)
+                            throw new Exception("Base Price Cannot be -Ve");
+                    category = catRepository.CreateAsync(category).Result;
+                    return Ok(category);
+                }
+                return BadRequest(ModelState);
+            //}
+            //catch (Exception ex)
+            //{
+            //    return BadRequest($"Error Occured while Processing Request {ex.Message}");
+            //}
+           
         }
         [HttpPut("{id}")]
         public IActionResult Put(int id, Category category)
